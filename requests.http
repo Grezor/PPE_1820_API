@@ -1,0 +1,8 @@
+###
+POST https://duplessigeoffrey.fr/api2/login_mobile.php
+Content-Type: application/x-www-form-urlencoded
+
+nom=tata&password=tata
+
+### logout_mobile
+
