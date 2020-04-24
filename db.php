@@ -1,7 +1,11 @@
 <?php 
 
 function getPDO(){
-
+try{
+  $db = new PDO();
+  }catch(PDOException $e){
+    die("ERREUR");
+  }
 
 }
 
@@ -50,6 +54,7 @@ function toogleLikePhoto($photoId, $userId){
   if (count($ids) > 1) {
     return false;
   }
+
   //si count($ids) = 0, on fait le insert sinon on fait le delete
   $req = count($ids) === 0 ?
     "INSERT INTO user_likes (id_user, id_photo) VALUES (:id_user, :id_photo)"

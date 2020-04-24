@@ -6,7 +6,7 @@ require_once('db.php');
 $token = null;
 
 if (isset($_POST['token'])) {
-  $login = $_POST['token'];
+  $token = $_POST['token'];
 }else{
   http_response_code(400);
   return;

@@ -6,3 +6,9 @@ nom=tata&password=tata
 
 ### logout_mobile
 
+### POST 
+POST https://duplessigeoffrey.fr/api2/toggle_like.php
+Content-Type: application/x-www-form-urlencoded
+
+photo_id=1
+
