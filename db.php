@@ -53,25 +53,10 @@ function getPhotos($code){
  * Soit obtient le user id si le token est valide
  * Soit retourne false si le token n'est pas valide
  * 
- * 
+ * @param string $token (jeton de l'utilisateur)
+ * @param int|bool (l'identifiant de l'utilisateur)
  */
 function getUserIdWithToken($token){
-  $req = "SELECT id_user FROM user_token WHERE token = :token";
-  $statement = getPDO()->prepare($req);
-  $statement->execute([":token" => $token]);
-  $ids = $statement->fetchAll(PDO::FETCH_ASSOC);
-  if(count($ids) != 1){
-    return false;
-  }
-  return $ids[0]["id_user"];
-}
-
-/**
- * @param $photoId
- * @param $userId
- * @return bool
- */
-function toggleLikePhoto($photoId, $token){
   $req = "SELECT id_user FROM user_token WHERE token = :token";
   $statement = getPDO()->prepare($req);
   $statement->execute([":token" => $token]);
@@ -80,7 +65,14 @@ function toggleLikePhoto($photoId, $token){
   if (count($ids) != 1) {
     return false;
   }
-  $userId = $ids[0]["id_user"];
+  return $ids[0]["id_user"];
+}
+/**
+ * @param $photoId
+ * @param $userId
+ * @return bool
+ */
+function toggleLikePhoto($photoId, $userId){
   // ajouter ou supprimer une ligne dans la table use_likes
   // si l'utilisateur avais like, on supprime la ligne
   // si l'utilisateur n'avais pas liké, on crée la ligne
