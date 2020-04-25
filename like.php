@@ -24,7 +24,7 @@ if ($userId === false) {
   http_response_code(401);
   return;
 }
-$result = toggleLikePhoto($photoId, $token);
+
 $result = toggleLikePhoto($photoId, $userId);
 
 if ($result === false) {

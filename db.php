@@ -4,11 +4,7 @@
  */
 function getPDO() {
   try{
-    $serveur = "localhost";
-    $nom_bd = "ppe1820";
-    $login = "root";
-    $mot_de_passe = "";
-    $db = new PDO('mysql:host=$serveur; dbname=$nom_bd;charset=utf8', '$login', '$mot_de_passe');
+    $db = new PDO('mysql:host=127.0.0.1; dbname=ppe1820;charset=utf8', 'root', '');
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
     return $db;
   }catch(PDOException $e){
@@ -57,7 +53,7 @@ function getPhotos($code){
  * @param int|bool (l'identifiant de l'utilisateur)
  */
 function getUserIdWithToken($token){
-  $req = "SELECT id_user FROM user_token WHERE token = :token";
+  $req = "SELECT id_user FROM user_tokens WHERE token = :token";
   $statement = getPDO()->prepare($req);
   $statement->execute([":token" => $token]);
   $ids = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -76,7 +72,7 @@ function toggleLikePhoto($photoId, $userId){
   // ajouter ou supprimer une ligne dans la table use_likes
   // si l'utilisateur avais like, on supprime la ligne
   // si l'utilisateur n'avais pas liké, on crée la ligne
-  $req = "SELECT id_user FROM user_token WHERE id_user = :id_user AND id_photo = :id_photo";
+  $req = "SELECT id_user FROM user_likes WHERE id_user = :id_user AND id_photo = :id_photo";
   $statement = getPDO()->prepare($req);
   $statement->execute([":id_user" => $userId, ":id_photo" => $photoId]);
   $ids = $statement->fetchAll(PDO::FETCH_ASSOC);

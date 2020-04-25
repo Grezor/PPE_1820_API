@@ -28,3 +28,9 @@ POST http://localhost/ppe1820/like.php
 Content-Type: application/x-www-form-urlencoded
 
 photo_id=1&token=
+
+### fonctionne(oui) erreur 400 si erreur token = 
+POST http://localhost/ppe1820/like.php 
+Content-Type: application/x-www-form-urlencoded
+
+photo_id=4&token=20vr0qoz725RHtDoQT8kJYzoOBZsIktKkZclpBUxE0
