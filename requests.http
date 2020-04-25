@@ -33,7 +33,7 @@ photo_id=1&token=
 POST http://localhost/ppe1820/like.php 
 Content-Type: application/x-www-form-urlencoded
 
-photo_id=4&token=20vr0qoz725RHtDoQT8kJYzoOBZsIktKkZclpBUxE0
+photo_id=1&token=b8Wm0phnNclidYMd2zXRs62jhftMRAfUcB8IrVmyaV
 
 ### fonctionne bien  - Affiche la liste des bornes ppour l'evenement
 GET http://localhost/ppe1820/photos.php?code=efficom
