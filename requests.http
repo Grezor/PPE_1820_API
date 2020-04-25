@@ -1,14 +1,30 @@
+### 
+http://localhost/ppe1820/bornes.php
+
+### 
+GET http://localhost/ppe1820/photos.php?code=SONA
+
 ###
-POST https://duplessigeoffrey.fr/api2/login_mobile.php
+POST http://localhost/ppe1820/likes.php 
 Content-Type: application/x-www-form-urlencoded
-
-nom=tata&password=tata
-
-### logout_mobile
-
-### POST 
-POST https://duplessigeoffrey.fr/api2/toggle_like.php
-Content-Type: application/x-www-form-urlencoded
-
 photo_id=1
 
+# fichier en prod
+###
+https://duplessigeoffrey.fr/api2/photos_event.php?code=SONA
+
+POST https//duplessigeoffrey.fr/api2/like.php
+Content-Type: application/x-www-form-urlencoded
+
+photo_id=3
+###
+POST http://localhost/ppe1820/duplessigeoffrey.fr/api2/login_mobile.php
+Content-Type: application/x-www-form-urlencoded
+
+nickname=tata&password=tata
+
+###
+POST http://localhost/ppe1820/like.php 
+Content-Type: application/x-www-form-urlencoded
+
+photo_id=1&token=
