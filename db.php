@@ -106,20 +106,20 @@ function generateRandomString($length = 10) {
  * @param $password
  * @return bool|string
  */
-function getToken($login, $password){
-  // trouver l'utilisateur en bdd
-  $req = "SELECT id FROM users WHERE nickname = :login AND password = :password";
-  $statement = getPdo()->prepare($req);
-  $statement->execute([
-      ":login" => $login, 
-      ":password" => $password
-  ]);
-  // on récupere le resultat 
-  $ids = $statement->fetchAll(PDO::FETCH_ASSOC);
-  //si on ne trouve pas exacttement une ligne, on arrete
-  if (count($ids) != 1) {
-      return false;
-  }
+// function getToken($login, $password){
+//   // trouver l'utilisateur en bdd
+//   $req = "SELECT id FROM users WHERE nickname = :login AND password = :password";
+//   $statement = getPdo()->prepare($req);
+//   $statement->execute([
+//       ":login" => $login, 
+//       ":password" => $password
+//   ]);
+//   // on récupere le resultat 
+//   $ids = $statement->fetchAll(PDO::FETCH_ASSOC);
+//   //si on ne trouve pas exacttement une ligne, on arrete
+//   if (count($ids) != 1) {
+//       return false;
+//   }
 
   // permet de regéner un nouveaux token en cas d'entrée dupliquée
   // crée le token s'il est trouvé 
