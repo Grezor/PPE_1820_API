@@ -1,8 +1,8 @@
 ### 
 http://localhost/ppe1820/bornes.php
 
-### 
-GET http://localhost/ppe1820/photos.php?code=SONA
+### fonctionne 
+GET http://localhost/ppe1820/photos.php?code=EFFICOM
 
 ###
 POST http://localhost/ppe1820/likes.php 
@@ -36,5 +36,5 @@ Content-Type: application/x-www-form-urlencoded
 photo_id=4&token=20vr0qoz725RHtDoQT8kJYzoOBZsIktKkZclpBUxE0
 
 ### 
-http://localhost/ppe1820/photos.php?code=efficom
+GET http://localhost/ppe1820/photos.php?code=efficom
 

@@ -131,10 +131,6 @@ INSERT INTO `users_tokens` (`id_user`, `token`, `creation_date`) VALUES
 (4, 'UaAqXcccIyXyjp4o0AzLFsrwBH1qmRFh2gH0sTdbsa', '2020-04-24 14:23:54');
 
 --
--- Contraintes pour les tables déchargées
---
-
---
 -- Contraintes pour la table `photos`
 --
 ALTER TABLE `photos`

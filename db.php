@@ -28,18 +28,19 @@ function getAllBornes()
  * @return array
  */
 function getPhotos($code){
-  // $req = "SELECT photos.id, estAime FROM photos
+  // $req = "SELECT photos.id FROM photos
   // JOIN reservations ON reservations.id = photos.id_reservation
   // WHERE reservations.code_evenement = '{$code}'";
-  $req = "SELECT photos.id, count(photos.id), user_likes.id_photo, count(user_likes.id_photo), photos.url
-          FROM `photos`
+
+  $req = "SELECT photos.id, count(user_likes.id_photo) AS likeCount, photos.url
+          FROM photos
           JOIN reservations ON reservations.id = photos.id_reservation
             AND reservations.code_evenement = :code_event
           LEFT JOIN user_likes ON photos.id = user_likes.id_photo 
           GROUP BY photos.id";
           
   $statement = getPDO()->prepare($req);
-  $statement->execute();
+  $statement->execute([":code_event" => $code]);
   return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 

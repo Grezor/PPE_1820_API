@@ -17,9 +17,9 @@ function getAllBornes(){
 
 function getPhotos($code){
 $req = "SELECT photo.id, count(user_likes.id_photo) as likeCount, photo.url 
-        FROM `photo`
+        FROM photo
         JOIN reservations ON reservations.id = photos.id_reservation AND reservations.code_evenement = :code_event
-        LEFT JOIN `user_likes` ON photo.id = user_likes.id_photo 
+        LEFT JOIN user_likes ON photo.id = user_likes.id_photo 
         GROUP BY photo_id";
 
 $statement = getPdo()->prepare($req);
@@ -69,7 +69,7 @@ function getToken($login, $password){
 }
 
 function logout($token) {
-  $req = "DELETE FROM users_tokens WHERE token = :token";
+  $req = "DELETE FROM user_tokens WHERE token = :token";
   $statement = getPdo()->prepare($req);
   return $statement->execute([
     ":token" => $token
