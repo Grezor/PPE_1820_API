@@ -72,7 +72,9 @@ function toggleLikePhoto($photoId, $userId){
   // ajouter ou supprimer une ligne dans la table use_likes
   // si l'utilisateur avais like, on supprime la ligne
   // si l'utilisateur n'avais pas liké, on crée la ligne
-  $req = "SELECT id_user FROM user_likes WHERE id_user = :id_user AND id_photo = :id_photo";
+  $req = "SELECT id_user 
+          FROM user_likes 
+          WHERE id_user = :id_user AND id_photo = :id_photo";
   $statement = getPDO()->prepare($req);
   $statement->execute([":id_user" => $userId, ":id_photo" => $photoId]);
   $ids = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -106,20 +108,20 @@ function generateRandomString($length = 10) {
  * @param $password
  * @return bool|string
  */
-// function getToken($login, $password){
-//   // trouver l'utilisateur en bdd
-//   $req = "SELECT id FROM users WHERE nickname = :login AND password = :password";
-//   $statement = getPdo()->prepare($req);
-//   $statement->execute([
-//       ":login" => $login, 
-//       ":password" => $password
-//   ]);
-//   // on récupere le resultat 
-//   $ids = $statement->fetchAll(PDO::FETCH_ASSOC);
-//   //si on ne trouve pas exacttement une ligne, on arrete
-//   if (count($ids) != 1) {
-//       return false;
-//   }
+function getToken($login, $password){
+  // trouver l'utilisateur en bdd
+  $req = "SELECT id FROM users WHERE nickname = :login AND password = :password";
+  $statement = getPdo()->prepare($req);
+  $statement->execute([
+      ":login" => $login, 
+      ":password" => $password
+  ]);
+  // on récupere le resultat 
+  $ids = $statement->fetchAll(PDO::FETCH_ASSOC);
+  //si on ne trouve pas exacttement une ligne, on arrete
+  if (count($ids) != 1) {
+      return false;
+  }
 
   // permet de regéner un nouveaux token en cas d'entrée dupliquée
   // crée le token s'il est trouvé 
@@ -127,7 +129,7 @@ function generateRandomString($length = 10) {
   while(true) {
       $token = generateRandomString(42);
       // sauvegarde le token 
-      $req = "INSERT INTO users_tokens (id_user, token, creation_date) VALUES (:id_user, :token, NOW())";
+      $req = "INSERT INTO user_tokens (id_user, token, creation_date) VALUES (:id_user, :token, NOW())";
       $statement = getPdo()->prepare($req);
       try {
           $statement->execute([
