@@ -150,3 +150,16 @@ function getToken($login, $password){
       }
   }    
 }
+
+/**
+ * fonction qui prend en paraetre le token
+ */
+function logout($token) {
+// vérifier
+  $req = "DELETE FROM user_tokens WHERE token = :token";
+  $statement = getPdo()->prepare($req);
+  $statement->execute([
+    ":token" => $token
+  ]);
+
+}
