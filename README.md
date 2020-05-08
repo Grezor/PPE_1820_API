@@ -16,7 +16,7 @@ Dans le cadre de notre projet d'étude, nous avons du réaliser une application 
   - [logiciel test API](https://insomnia.rest/)
   - [Images API]()
   - [Voir l'api](http://duplessigeoffrey.fr/api2/photos.php?code=EFFICOM)
-  - [Information Base de donnée]()
+  - [Information Base de donnée](https://github.com/Grezor/PPE_1820_API/blob/master/documentations/database.md)
 
 ## ▶️ Tests / fonctionnement :
 
