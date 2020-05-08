@@ -10,35 +10,17 @@ Dans le cadre de notre projet d'étude, nous avons du réaliser une application 
 
 ## ▶️ fonctionnement :
 
-  
-
 ## ▶️ Ressources :
   - [HTTP status](https://developer.mozilla.org/fr/docs/Web/HTTP/Status)
   - [Documentation PHP](https://www.php.net/manual/fr/)
   - [logiciel test API](https://insomnia.rest/)
-  
+  - [Images API]()
+  - [Voir l'api](http://duplessigeoffrey.fr/api2/photos.php?code=EFFICOM)
+  - [Information Base de donnée]()
+
 ## ▶️ Tests / fonctionnement :
 
 Pour vérifier le fonctionnement de l'API, j'ai utiliser un fichier qui requests.http. Pour cela j'ai utiliser l'extension de visual studio code [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 
 ## ▶️ Auteur
-
 - **Duplessi Geoffrey** 
-
-## tables : 
-  - Bornes 
-  - photos
-  - reservations
-  - users
-  - user_likes
-  _ user_tokens
-
-## fichiers : 
-  - bornes.php 
-  - db.php 
-  - like.php
-  - functions.php
-  - login_mobile.php
-  - logout_mobile.php
-  - photos.php
-
