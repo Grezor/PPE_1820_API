@@ -32,4 +32,5 @@ if ($result === false) {
   return;
 }
 
+echo $result;
 ?>

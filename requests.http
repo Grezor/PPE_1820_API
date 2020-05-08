@@ -16,13 +16,17 @@ https://duplessigeoffrey.fr/api2/photos_event.php?code=SONA
 POST https//duplessigeoffrey.fr/api2/like.php
 Content-Type: application/x-www-form-urlencoded
 
-photo_id=3
+photo_id=4&token
 ###
-POST http://localhost/ppe1820/duplessigeoffrey.fr/api2/login_mobile.php
+POST http://duplessigeoffrey.fr/api2/login_mobile.php
 Content-Type: application/x-www-form-urlencoded
 
-nickname=tata&password=tata
+nickname=toto&password=toto
+###
+POST http://duplessigeoffrey.fr/api2/like.php
+Content-Type: application/x-www-form-urlencoded
 
+photo_id=4&token=m9CSG0qSDauEBd5vmnIIjmaxhxxtfkgBtTtaTT3w3y
 ###
 POST http://localhost/ppe1820/like.php 
 Content-Type: application/x-www-form-urlencoded
@@ -33,7 +37,7 @@ photo_id=1&token=
 POST http://localhost/ppe1820/like.php 
 Content-Type: application/x-www-form-urlencoded
 
-photo_id=6&token=b8Wm0phnNclidYMd2zXRs62jhftMRAfUcB8IrVmyaV
+photo_id=4&token=bfR48AzN4L09b4ri5GBkdRgtBCXlzcUZf4x73QMIxj
 
 ### fonctionne bien  - Affiche la liste des bornes ppour l'evenement
 GET http://localhost/ppe1820/photos.php?code=efficom
@@ -43,6 +47,8 @@ POST http://localhost/ppe1820/login_mobile.php
 Content-Type: application/x-www-form-urlencoded
 
 nickname=tata&password=tata
-
 ### 
-POST http
+POST http://localhost/ppe1820/logout_mobile.php
+Content-Type: application/x-www-form-urlencoded
+
+token=ehdsmkFcMekme3SwAnlzXVMPYtlXFUpfzfwB5KIhRY

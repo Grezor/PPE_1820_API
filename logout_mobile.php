@@ -11,16 +11,16 @@ if (isset($_POST['token'])) {
   http_response_code(400);
   return;
 }
-/* si le token n'est pas en base de donnée */
+
 if(getUserIdWithToken($token) == false){
   http_response_code(401);
   return;
 }
-
+// echo 'bonjour';
 if(logout($token) == false) {
   http_response_code(500);
   return;
 }
 
-echo "success, le logout est ok"
+echo "success"
 ?>

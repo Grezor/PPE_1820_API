@@ -1,4 +1,0 @@
-Ce dossier concerne le ppe1820 efficom
-Api rest php vers android 
-
-tables concerner

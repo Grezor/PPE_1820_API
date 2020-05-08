@@ -3,14 +3,22 @@
  * Connexion a la base de données
  */
 function getPDO() {
-  try{
-    $db = new PDO('mysql:host=127.0.0.1; dbname=ppe1820;charset=utf8', 'root', '');
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-    return $db;
-  }catch(PDOException $e){
-    die("ERREUR");
+
+      $dbHost = 'localhost';
+      $dbName = 'ppe1820';
+      $dbUser = 'root';
+      $dbPass = '';
+
+  try {
+      $pdo = new PDO("mysql:host={$dbHost};dbname={$dbName}", $dbUser, $dbPass);
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+      return $pdo;
+  } catch (PDOException $e) { 
+      die('IMPOSSIBLE DE SE CONNECTER A LA BASE DE DONNEE');
   }
 }
+
 
 /**
  * Affiche le nombres de bornes
@@ -88,7 +96,25 @@ function toggleLikePhoto($photoId, $userId){
         "INSERT into user_likes (id_user, id_photo) VALUES (:id_user, :id_photo)" 
         : "DELETE FROM user_likes WHERE id_user = :id_user AND id_photo = :id_photo";
   $statement = getPDO()->prepare($req);
-  return $statement->execute([":id_user" => $userId, ":id_photo" => $photoId]); // rreturn true si ca echoue
+  $insertResult = $statement->execute([
+    ":id_user" => $userId,
+    ":id_photo" => $photoId
+    ]);
+    // si cela echoue
+  if($insertResult == false){
+    return false;
+  }
+  // return le nombre de like d'une photo
+  $req = "SELECT count(id_photo) as likeCount
+          FROM user_likes 
+          WHERE id_photo = :id_photo";
+  $statement = getPDO()->prepare($req);
+  $statement->execute([":id_photo" => $photoId]);
+  $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+  if (count($result) != 1) {
+    return false;
+  }
+  return $result[0]["likeCount"];
 }
 
 /**
