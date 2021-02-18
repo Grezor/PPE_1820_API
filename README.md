@@ -49,10 +49,8 @@ Le projet est en liaison avec mon site Ecommerce, je vous explique en petit form
 ## Languages : 
 - PHP
 
-
-
 ## Conclusion : 
-<span style="color: #26B260">test<span>
+Tout d'abord ce projet m'a permis d'appliquer mes connaissance que j'ai pu acquerir durant mes année d'étude, telles que la conception de la base de donnée, mais aussi le langage PHP.
 
 ## Auteur
 - **Duplessi Geoffrey** 
