@@ -119,6 +119,7 @@ function toggleLikePhoto($photoId, $userId){
 
 /**
  * Function qui permet de génerer un token pour la table users
+ * @return string
  */
 function generateRandomString($length = 10) {
   $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -178,7 +179,7 @@ function getToken($login, $password){
 }
 
 /**
- * fonction qui prend en paraetre le token
+ * fonction qui prend en parametre le token
  */
 function logout($token) {
 // vérifier
