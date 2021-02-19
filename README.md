@@ -1,12 +1,17 @@
 # PPE 1820 - API
 
-# Table of Contents
-- [Introduction](#Introduction)
-- [Links](#Links)
-- [Description projet](#Description-du-projet)
-- [Realisation technique](#Realisation-technique)
-- [tEST](#Les-tests)
-- [Introduction](#Introduction)
+Table of Contents
+  * [Introduction](#introduction)
+  * [Links](#links)
+  * [Description du projet](#description-du-projet)
+  * [Realisation technique](#realisation-technique)
+  * [Les tests](#les-tests)
+  * [Documentation](#documentation)
+  * [Languages](#languages)
+  * [Conclusion](#conclusion)
+  * [Auteur](#auteur)
+
+  
 ## Introduction :
 Dans le cadre de ma  3 ième année de BTS Services Informatiques aux Organisations. Il nous a été demander de réaliser une
 application Android. Nous avons crée une API REST, permettant la communication entre [Application Mobile](https://github.com/Grezor/App_KOTLIN_2020) et la base de
