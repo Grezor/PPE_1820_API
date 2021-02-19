@@ -1,21 +1,19 @@
-# PPE 1820 - API
+# PPE 1820 - API REST
 
-- Table of Contents
-  * [Introduction](#introduction)
-  * [Links](#links)
-  * [Description du projet](#description-du-projet)
-  * [Realisation technique](#realisation-technique)
-  * [Les tests](#les-tests)
-  * [Documentation](#documentation)
-  * [Languages](#languages)
-  * [Conclusion](#conclusion)
-  * [Auteur](#auteur)
+- [PPE 1820 - API REST](#ppe-1820---api-rest)
+  - [Introduction](#introduction)
+  - [Links](#links)
+  - [Description du projet](#description-du-projet)
+  - [Realisation technique](#realisation-technique)
+  - [Les tests](#les-tests)
+  - [Documentation](#documentation)
+  - [Languages](#languages)
+  - [Conclusion](#conclusion)
+  - [Auteur](#auteur)
 
-
-## Introduction :
+## Introduction
 Dans le cadre de ma  3 ième année de BTS Services Informatiques aux Organisations. Il nous a été demander de réaliser une
-application Android. Nous avons crée une API REST, permettant la communication entre [Application Mobile](https://github.com/Grezor/App_KOTLIN_2020) et la base de
-données de l'application.
+API REST. Nous avons crée une API REST, permettant la communication entre [Application Mobile](https://github.com/Grezor/App_KOTLIN_2020) et la base de données du site ecommerce et du mobile.
 
 ## Links
 <!-- Site Ecommerce -->
@@ -23,7 +21,7 @@ données de l'application.
 <!-- Application Android -->
 - [Application Mobile](https://github.com/Grezor/App_KOTLIN_2020)
 
-## Description du projet : 
+## Description du projet
 Le projet est en liaison avec mon site Ecommerce, je vous explique en petit format comment fonctionne le projet
 
 ```
@@ -38,15 +36,19 @@ Le projet est en liaison avec mon site Ecommerce, je vous explique en petit form
 [client] - peut liker et dislike les photos
 ```
 
-## Realisation technique :
+## Realisation technique
 
-  ## Les tests : 
+  ## Les tests
 
-  - Vérification des requestes
+  - Vérification des requetes
   - Vérification des affichages (GET, POST)
+  - Vérifications des insert, et update
 
+Pour vérifier le fonctionnement de l'API, j'ai utilisé un fichier qui **requests.http**
 
-  Pour vérifier le fonctionnement de l'API, j'ai utiliser un fichier qui requests.http. Pour cela j'ai utiliser l'extension de visual studio code [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
+Pour cela j'ai utilisé l'extension de Visual Studio code 
+  - [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+  
 
 
 ## Documentation
@@ -58,10 +60,10 @@ Le projet est en liaison avec mon site Ecommerce, je vous explique en petit form
   - [Information Base de donnée](https://github.com/Grezor/PPE_1820_API/blob/master/documentations/database.md)
 
 
-## Languages : 
+## Languages 
 - PHP
 
-## Conclusion : 
+## Conclusion
 Tout d'abord ce projet m'a permis d'appliquer mes connaissance que j'ai pu acquerir durant mes année d'étude, telles que la conception de la base de donnée, mais aussi le langage PHP.
 
 ## Auteur
